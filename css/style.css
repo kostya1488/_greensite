@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Krona+One&family=Ubuntu:wght@300;400;500;700&display=swap");
+* {
+  box-sizing: border-box; }
+
+.body {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 18px;
+  line-height: 150%;
+  /* or 27px */ }
+  .body a,
+  .body a:hover {
+    text-decoration: none;
+    color: #fff; }
+  .body ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+  .body .section_title {
+    font-family: 'Krona One', sans-serif;
+    font-size: 40px;
+    line-height: 50px; }
+  .body .btn_main {
+    display: inline-block;
+    background: linear-gradient(90deg, #02AAB0 0%, #00CDAC 100%);
+    color: #000;
+    border-radius: 10px;
+    min-width: 184px;
+    padding: 11px 32px; }
+    .body .btn_main:hover {
+      color: #000; }
+  .body .btn_secondary {
+    display: inline-block;
+    background: #000;
+    border-radius: 10px;
+    min-width: 184px;
+    padding: 11px 32px; }
+
+section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  overflow-x: hidden; }
+
+.header {
+  position: relative;
+  z-index: 1; }
+  .header .phone_number a {
+    color: #01C2AD; }
+  .header .phone_number img {
+    width: 20px;
+    position: relative;
+    bottom: 2px; }
+
+.section_intro {
+  padding-top: 35px;
+  background: url(../assets/intro.jpg) no-repeat center bottom;
+  background-size: cover;
+  min-height: 100vh;
+  position: relative; }
+  .section_intro::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(280.95deg, rgba(0, 0, 0, 0.511) 45.31%, rgba(17, 138, 119, 0.42) 78.06%); }
+  .section_intro .intro_text_box {
+    position: relative;
+    z-index: 1;
+    margin-top: 50%; }
+    .section_intro .intro_text_box .intro_subtitle {
+      font-weight: 300;
+      font-size: 27px;
+      line-height: 31px;
+      /* identical to box height */
+      color: #fff; }
+    .section_intro .intro_text_box .intro_title {
+      background: -webkit-linear-gradient(90deg, #00CDAC, #02AAB0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent; }
+    .section_intro .intro_text_box .intro_description {
+      color: #fff; }
+
+.section_contacts {
+  background: linear-gradient(90deg, #02AAB0 0%, #00CDAC 100%); }
+  .section_contacts .contacts_text_box {
+    font-weight: 500;
+    font-size: 27px;
+    line-height: 31px;
+    color: #fff; }
+    .section_contacts .contacts_text_box .text_color {
+      color: #000; }
+  .section_contacts .phone_numbers_list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: 100px; }
+    .section_contacts .phone_numbers_list li + li {
+      margin-top: 5px; }
+    .section_contacts .phone_numbers_list .phone_number {
+      color: #000; }
+
+.section_advantages {
+  background: url(..//assets/advantages.jpg) no-repeat 0 0;
+  background-size: 100%;
+  min-height: 600px;
+  position: relative; }
+  .section_advantages .adv_figure1 {
+    position: absolute;
+    left: 0;
+    top: 100px; }
+  .section_advantages .adv_figure2 {
+    position: absolute;
+    right: 0;
+    top: 0; }
+  .section_advantages .section_title {
+    background: -webkit-linear-gradient(90deg, #00CDAC, #02AAB0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; }
+  .section_advantages .advantages_description {
+    color: #AFAFAF; }
+
+.two_section {
+  position: relative;
+  overflow: hidden; }
+
+.section_about {
+  background: linear-gradient(90deg, #02AAB0 0%, #00CDAC 98.29%); }
+  .section_about .about_text_box {
+    color: #fff;
+    text-shadow: 0px 4px 25px #2B595A;
+    z-index: 1; }
+  .section_about .about_bot_bg,
+  .section_about .about_bot {
+    position: absolute;
+    width: 100%;
+    height: 436px;
+    top: 347px;
+    left: 0; }
+  .section_about .figure3 {
+    position: absolute;
+    top: 520px;
+    right: 0; }
+
+.section_vacancies {
+  padding-top: 0;
+  background: #0D0B0E; }
+  .section_vacancies .section_title {
+    background: -webkit-linear-gradient(90deg, #00CDAC, #02AAB0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; }
+  .section_vacancies .vacancies_subtitle {
+    font-weight: 500;
+    font-size: 27px;
+    line-height: 115%;
+    /* identical to box height, or 31px */
+    color: #E8E8E8; }
+  .section_vacancies .nav-tabs {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.35); }
+    .section_vacancies .nav-tabs .nav-item {
+      flex: 1; }
+    .section_vacancies .nav-tabs .nav-link {
+      font-size: 27px;
+      line-height: 31px;
+      /* identical to box height */
+      color: #AFAFAF;
+      border: none;
+      padding: 30px 0;
+      transition: .3s; }
+      .section_vacancies .nav-tabs .nav-link:hover {
+        border: none; }
+    .section_vacancies .nav-tabs .nav-link.active {
+      color: #00CDAC;
+      background-color: rgba(0, 0, 0, 0);
+      border-bottom: 2px solid #FFFFFF; }
+  .section_vacancies .tab-pane {
+    min-height: 350px; }
+  .section_vacancies .tab_title {
+    font-size: 27px;
+    line-height: 150%;
+    /* identical to box height, or 40px */
+    color: #939393; }
+  .section_vacancies .tab_description {
+    color: #fff; }
+  .section_vacancies .figure4 {
+    position: absolute;
+    bottom: -160px;
+    left: 0; }
+
+.section_promo {
+  background: linear-gradient(90deg, #02AAB0 0%, #00CDAC 98.29%); }
