@@ -32,7 +32,7 @@
     display: inline-block;
     background: #000;
     border-radius: 10px;
-    min-width: 184px;
+    max-width: 184px;
     padding: 11px 32px; }
 
 section {
@@ -126,6 +126,7 @@ section {
   overflow: hidden; }
 
 .section_about {
+  padding-top: 60px;
   background: linear-gradient(90deg, #02AAB0 0%, #00CDAC 98.29%); }
   .section_about .about_text_box {
     color: #fff;
@@ -136,11 +137,11 @@ section {
     position: absolute;
     width: 100%;
     height: 436px;
-    top: 347px;
+    top: 355px;
     left: 0; }
   .section_about .figure3 {
     position: absolute;
-    top: 520px;
+    top: 535px;
     right: 0; }
 
 .section_vacancies {
@@ -176,17 +177,140 @@ section {
       border-bottom: 2px solid #FFFFFF; }
   .section_vacancies .tab-pane {
     min-height: 350px; }
-  .section_vacancies .tab_title {
-    font-size: 27px;
-    line-height: 150%;
-    /* identical to box height, or 40px */
-    color: #939393; }
-  .section_vacancies .tab_description {
-    color: #fff; }
+    .section_vacancies .tab-pane .image_bg {
+      background: linear-gradient(90deg, #02AAB0 0%, #00CDAC 100%);
+      border-radius: 5.77114px;
+      width: 147.16px;
+      height: 131.58px; }
+    .section_vacancies .tab-pane .tab_title {
+      font-size: 27px;
+      line-height: 150%;
+      /* identical to box height, or 40px */
+      color: #939393; }
+    .section_vacancies .tab-pane .tab_description {
+      color: #fff;
+      min-height: 300px; }
   .section_vacancies .figure4 {
     position: absolute;
     bottom: -160px;
     left: 0; }
 
 .section_promo {
-  background: linear-gradient(90deg, #02AAB0 0%, #00CDAC 98.29%); }
+  background: linear-gradient(90deg, #02AAB0 0%, #00CDAC 98.29%);
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 69px; }
+  .section_promo .section_title {
+    text-shadow: 0px 4px 25px #2B595A;
+    color: #fff;
+    position: relative;
+    z-index: 1; }
+  .section_promo .promo_front_photo {
+    position: relative;
+    z-index: 1; }
+  .section_promo .promo_item {
+    position: relative;
+    display: flex;
+    max-width: 370px;
+    padding: 16px;
+    background-color: #fff;
+    box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07), 0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198), 0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275), 0px 12.5216px 10.0172px rgba(0, 0, 0, 0.035), 0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725), 0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802);
+    border-radius: 10px;
+    z-index: 3; }
+    .section_promo .promo_item .numb_box {
+      background: #00CDAC;
+      box-shadow: 0px 66.9323px 53.5458px rgba(0, 0, 0, 0.07), 0px 27.9627px 22.3702px rgba(0, 0, 0, 0.0503198), 0px 14.9502px 11.9602px rgba(0, 0, 0, 0.0417275), 0px 8.38096px 6.70477px rgba(0, 0, 0, 0.035), 0px 4.45106px 3.56085px rgba(0, 0, 0, 0.0282725), 0px 1.85219px 1.48175px rgba(0, 0, 0, 0.0196802);
+      border-radius: 6.69323px;
+      padding: 5px 11px;
+      min-width: 50px;
+      color: #fff;
+      font-family: 'Krona One', sans-serif;
+      font-size: 30px;
+      line-height: 37px;
+      margin-right: 16px; }
+    .section_promo .promo_item .promo_text {
+      font-weight: 500; }
+  .section_promo .mt-10 {
+    margin-top: 100px; }
+  .section_promo .mt-15 {
+    margin-top: 150px; }
+  .section_promo .promo_figure1 {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0; }
+  .section_promo .promo_figure2 {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 2; }
+
+.section_anketa {
+  background: url(../assets/anketa.jpg) no-repeat 50% 100%;
+  background-size: cover;
+  min-height: 100vh;
+  position: relative; }
+  .section_anketa::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(280.95deg, rgba(0, 0, 0, 0.511) 45.31%, rgba(17, 138, 119, 0.42) 78.06%); }
+  .section_anketa .section_title {
+    background: -webkit-linear-gradient(90deg, #00CDAC, #02AAB0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    z-index: 1; }
+  .section_anketa .section_subtitle {
+    font-weight: 500;
+    font-size: 27px;
+    line-height: 115%;
+    /* identical to box height, or 31px */
+    color: #E8E8E8;
+    position: relative;
+    z-index: 1; }
+  .section_anketa .form_box {
+    background: linear-gradient(90deg, #006568 -10.8%, #009D84 98.11%);
+    border-radius: 10px;
+    padding: 35px 30px;
+    position: relative;
+    z-index: 1; }
+  .section_anketa .text_for_input {
+    color: #FFF;
+    padding: 0 8px; }
+  .section_anketa .input {
+    background: #EDEDED;
+    border-radius: 10px;
+    padding: 8px;
+    width: 100%;
+    border: none;
+    outline: none;
+    margin-bottom: 20px; }
+  .section_anketa .btn_secondary {
+    border: none;
+    outline: none;
+    color: #FFF; }
+
+.section_footer {
+  background: linear-gradient(90deg, #02AAB0 0%, #00CDAC 98.29%);
+  padding: 60px 0;
+  position: relative; }
+  .section_footer .container {
+    position: relative;
+    z-index: 1; }
+  .section_footer a {
+    color: #000; }
+    .section_footer a:hover {
+      color: #000; }
+  .section_footer .phone_number {
+    font-weight: 600; }
+  .section_footer .footer_figure {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
