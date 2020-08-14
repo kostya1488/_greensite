@@ -26,7 +26,6 @@ $screen_xl: 1200px;
     font-family: 'Ubuntu', sans-serif;
     font-size: 18px;
     line-height: 150%;
-    /* or 27px */
     a,
     a:hover {
         text-decoration: none;
@@ -41,6 +40,10 @@ $screen_xl: 1200px;
         font-family: 'Krona One', sans-serif;
         font-size: 40px;
         line-height: 50px;
+    }
+    .section_subtitle {
+        font-size: 27px;
+        line-height: 115%;
     }
     .btn_main {
         display: inline-block;
@@ -57,8 +60,20 @@ $screen_xl: 1200px;
         display: inline-block;
         background: #000;
         border-radius: 10px;
-        max-width: 184px;
+        min-width: 184px;
         padding: 11px 32px;
+    }
+    @media (max-width: $screen_lg_max) {
+        font-size: 16px;
+    }
+    @media (max-width: $screen_xs_max) {
+        .section_title {
+            font-size: 24px;
+            line-height: 33px;
+        }
+        .section_subtitle {
+            font-size: 20px;
+        }
     }
 }
 
@@ -66,6 +81,10 @@ section {
     padding-top: 100px;
     padding-bottom: 100px;
     overflow-x: hidden;
+    @media (max-width: $screen_md_max) {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
 }
 
 // ========================================================== / commons
@@ -83,15 +102,117 @@ section {
             bottom: 2px;
         }
     }
+    .nav {
+        &--checkbox {
+            display: none;
+        }
+        &--button {
+            position: absolute;
+        }
+    }
 }
 
-// ========================================================== / header  
+@media (max-width: $screen_xs_max) {
+    .nav {
+        &--button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            bottom: 20px;
+            right: 20px;
+            height: 70px;
+            width: 70px;
+            background: linear-gradient(90deg, #02AAB0 0%, #00CDAC 100%);
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+            z-index: 666;
+            transition: all 500ms cubic-bezier(.6, -.5, .4, 1.5);
+            span {
+                position: absolute;
+                display: inline-block;
+                background: #000;
+                border-radius: 3px;
+                height: 3px;
+                width: 26px;
+                transition: 500ms;
+            }
+            .span_top {
+                margin-bottom: 16px;
+            }
+            .span_bot {
+                margin-top: 16px;
+            }
+        }
+        &--small {
+            position: absolute;
+            background: linear-gradient(90deg, #02AAB0 0%, #00CDAC 100%);
+            bottom: 33px;
+            right: 25px;
+            height: 60px;
+            width: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+            border-radius: 50%;
+            transition: all 500ms cubic-bezier(.6, -.5, .4, 1.5);
+            z-index: 1;
+            a {
+                color: #000;
+            }
+        }
+        &--btn {
+            &-1 {
+                transition-delay: 200ms
+            }
+            &-2 {
+                transition-delay: 150ms
+            }
+            &-3 {
+                transition-delay: 100ms
+            }
+            &-4 {
+                transition-delay: 50ms
+            }
+        }
+        &--checkbox:checked~&--button {
+            background: #fff;
+            .span_top {
+                margin-bottom: 0;
+                transform: rotate(45deg);
+            }
+            .span_mid {
+                transform: rotate(135deg);
+            }
+            .span_bot {
+                margin-top: 0;
+                transform: rotate(45deg);
+            }
+            transition: 3s;
+        }
+        &--checkbox:checked~&--btn-1 {
+            bottom: 200px;
+            right: 20px;
+        }
+        &--checkbox:checked~&--btn-2 {
+            bottom: 120px;
+            right: 60px;
+        }
+        &--checkbox:checked~&--btn-3 {
+            bottom: 54px;
+            right: 112px;
+        }
+        &--checkbox:checked~&--btn-4 {
+            bottom: 4px;
+            right: 180px;
+        }
+    }
+}
+
+// ========================================================== / header
 // ---------------------------------------------------------- section_intro  
 .section_intro {
     padding-top: 35px;
-    background: url(../assets/intro.jpg) no-repeat center bottom;
-    background-size: cover;
-    min-height: 100vh;
     position: relative;
     &::after {
         content: "";
@@ -103,22 +224,49 @@ section {
         background: linear-gradient(280.95deg, rgba(0, 0, 0, 0.511) 45.31%, rgba(17, 138, 119, 0.42) 78.06%);
     }
     .intro_text_box {
-        position: relative;
         z-index: 1;
-        margin-top: 50%;
         .intro_subtitle {
             font-weight: 300;
-            font-size: 27px;
-            line-height: 31px;
-            /* identical to box height */
             color: #fff;
         }
         .intro_title {
             @include gradient_text();
-            // text-shadow: 0px 4px 25px #2B595A;
         }
         .intro_description {
             color: #fff;
+        }
+    }
+    @media (min-width: $screen_xl) {
+        min-height: 100vh;
+        .intro_text_box {
+            margin-top: 60%;
+        }
+    }
+    @media (min-width: $screen_lg) and (max-width: $screen_lg_max) {
+        min-height: 78vh;
+        .intro_text_box {
+            margin-top: 66%;
+        }
+    }
+    @media (min-width: $screen_sm) and (max-width: $screen_md_max) {
+        min-height: 75vh;
+        .intro_text_box {
+            margin-top: 70%;
+        }
+    }
+    @media (min-width: $screen_sm) {
+        background: url(../assets/intro.jpg) no-repeat center bottom;
+        background-size: cover;
+        .intro_text_box {
+            position: relative;
+        }
+    }
+    @media (max-width: $screen_xs_max) {
+        background: url(../assets/intro_mob.jpg) no-repeat 100% 0%;
+        background-size: cover;
+        min-height: 100vh;
+        .section_title {
+            line-height: 40px;
         }
     }
 }
@@ -129,8 +277,6 @@ section {
     background: linear-gradient(90deg, #02AAB0 0%, #00CDAC 100%);
     .contacts_text_box {
         font-weight: 500;
-        font-size: 27px;
-        line-height: 31px;
         color: #fff;
         .text_color {
             color: #000;
@@ -141,12 +287,16 @@ section {
         flex-direction: column;
         justify-content: space-around;
         flex-wrap: wrap;
-        height: 100px;
+        .phone_number {
+            color: #000;
+        }
         li+li {
             margin-top: 5px;
         }
-        .phone_number {
-            color: #000;
+    }
+    @media (min-width: $screen_sm) {
+        .phone_numbers_list {
+            height: 100px;
         }
     }
 }
@@ -156,23 +306,37 @@ section {
 .section_advantages {
     background: url(..//assets/advantages.jpg) no-repeat 0 0;
     background-size: 100%;
-    min-height: 600px;
+    // min-height: 600px;
     position: relative;
+    overflow: hidden;
     .adv_figure1 {
         position: absolute;
         left: 0;
-        top: 100px;
     }
     .adv_figure2 {
         position: absolute;
-        right: 0;
         top: 0;
+        right: 0;
     }
     .section_title {
         @include gradient_text();
     }
     .advantages_description {
         color: #AFAFAF;
+    }
+    @media (min-width: $screen_sm) {
+        .adv_figure1 {
+            top: 100px;
+        }
+    }
+    @media (max-width: $screen_xs_max) {
+        .adv_figure1 {
+            bottom: -70px;
+            left: -59px;
+        }
+        .adv_figure2 {
+            right: -122px;
+        }
     }
 }
 
@@ -181,11 +345,21 @@ section {
 .two_section {
     position: relative;
     overflow: hidden;
+    .figure3 {
+        position: absolute;
+        right: 0;
+        top: 650px;
+        z-index: 1;
+        @media (min-width: $screen_xl) {}
+    }
 }
 
 .section_about {
     padding-top: 60px;
+    padding-bottom: 88px;
     background: linear-gradient(90deg, #02AAB0 0%, #00CDAC 98.29%);
+    position: relative;
+    overflow: hidden;
     .about_text_box {
         color: #fff;
         text-shadow: 0px 4px 25px #2B595A;
@@ -195,14 +369,34 @@ section {
     .about_bot {
         position: absolute;
         width: 100%;
-        height: 436px;
-        top: 355px;
         left: 0;
+        bottom: 0;
     }
-    .figure3 {
-        position: absolute;
-        top: 535px;
-        right: 0;
+    .about_bot {
+        z-index: 2;
+    }
+    .photo_wrap {
+        .about_photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    @media (max-width: $screen_xs_max) {
+        position: relative;
+        padding-bottom: 20px;
+        .photo_wrap {
+            margin-top: 10px;
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+        .about_bot_bg,
+        .about_bot {
+            height: 8%;
+        }
     }
 }
 
@@ -216,9 +410,6 @@ section {
     }
     .vacancies_subtitle {
         font-weight: 500;
-        font-size: 27px;
-        line-height: 115%;
-        /* identical to box height, or 31px */
         color: #E8E8E8;
     }
     .nav-tabs {
@@ -227,9 +418,6 @@ section {
             flex: 1;
         }
         .nav-link {
-            font-size: 27px;
-            line-height: 31px;
-            /* identical to box height */
             color: #AFAFAF;
             border: none;
             padding: 30px 0;
@@ -253,20 +441,31 @@ section {
             height: 131.58px;
         }
         .tab_title {
-            font-size: 27px;
-            line-height: 150%;
-            /* identical to box height, or 40px */
             color: #939393;
         }
         .tab_description {
             color: #fff;
-            min-height: 300px;
         }
     }
     .figure4 {
         position: absolute;
         bottom: -160px;
         left: 0;
+    }
+    @media (min-width: $screen_sm) {
+        .tab_description {
+            min-height: 300px;
+        }
+    }
+    @media (max-width: $screen_xs_max) {
+        .nav-tabs {
+            .nav-link {
+                padding: 15px 0;
+            }
+            .section_subtitle {
+                font-size: 15px;
+            }
+        }
     }
 }
 
@@ -276,7 +475,6 @@ section {
     background: linear-gradient(90deg, #02AAB0 0%, #00CDAC 98.29%);
     position: relative;
     overflow: hidden;
-    padding-bottom: 69px;
     .section_title {
         text-shadow: 0px 4px 25px #2B595A;
         color: #fff;
@@ -290,6 +488,7 @@ section {
     .promo_item {
         position: relative;
         display: flex;
+        align-items: center;
         max-width: 370px;
         padding: 16px;
         background-color: #fff;
@@ -312,12 +511,6 @@ section {
             font-weight: 500;
         }
     }
-    .mt-10 {
-        margin-top: 100px;
-    }
-    .mt-15 {
-        margin-top: 150px;
-    }
     .promo_figure1 {
         position: absolute;
         width: 100%;
@@ -331,6 +524,36 @@ section {
         left: 0;
         z-index: 2;
     }
+    @media (min-width: $screen_xl) {
+        padding-bottom: 69px;
+    }
+    @media (min-width: $screen_lg) {
+        .item1 {
+            margin-top: 100px;
+        }
+        .item2,
+        .item4 {
+            margin-top: 150px;
+        }
+    }
+    @media (max-width: $screen_lg_max) {
+        padding-bottom: 44px;
+    }
+    @media (max-width: $screen_md_max) {
+        .item1,
+        .item2,
+        .item3,
+        .item4 {
+            margin-top: 35px;
+        }
+        padding-bottom: 33px;
+    }
+    @media (max-width: $screen_xs_max) {
+        .promo_figure2 {
+            width: 197%;
+            left: -57px;
+        }
+    }
 }
 
 // ========================================================== / section_promo  
@@ -338,7 +561,6 @@ section {
 .section_anketa {
     background: url(../assets/anketa.jpg) no-repeat 50% 100%;
     background-size: cover;
-    min-height: 100vh;
     position: relative;
     &::after {
         content: "";
@@ -356,9 +578,6 @@ section {
     }
     .section_subtitle {
         font-weight: 500;
-        font-size: 27px;
-        line-height: 115%;
-        /* identical to box height, or 31px */
         color: #E8E8E8;
         position: relative;
         z-index: 1;
@@ -366,13 +585,13 @@ section {
     .form_box {
         background: linear-gradient(90deg, #006568 -10.8%, #009D84 98.11%);
         border-radius: 10px;
-        padding: 35px 30px;
+        padding: 35px 20px;
         position: relative;
         z-index: 1;
     }
     .text_for_input {
         color: #FFF;
-        padding: 0 8px;
+        padding: 0 8px 3px;
     }
     .input {
         background: #EDEDED;
@@ -387,6 +606,9 @@ section {
         border: none;
         outline: none;
         color: #FFF;
+    }
+    @media (min-width: $screen_xl) {
+        min-height: 100vh;
     }
 }
 
