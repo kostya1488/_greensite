@@ -27,7 +27,8 @@
     color: #000;
     border-radius: 10px;
     min-width: 184px;
-    padding: 11px 32px; }
+    padding: 11px 32px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25); }
     .body .btn_main:hover {
       color: #000; }
   .body .btn_secondary {
@@ -35,7 +36,8 @@
     background: #000;
     border-radius: 10px;
     min-width: 184px;
-    padding: 11px 32px; }
+    padding: 11px 32px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25); }
   @media (max-width: 1199px) {
     .body {
       font-size: 16px; } }
@@ -105,12 +107,15 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+    transform: rotate(-10deg);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     border-radius: 50%;
     transition: all 500ms cubic-bezier(0.6, -0.5, 0.4, 1.5);
     z-index: 1; }
     .nav--small a {
-      color: #000; }
+      color: #000;
+      visibility: hidden;
+      transition: .5s; }
   .nav--btn-1 {
     transition-delay: 200ms; }
   .nav--btn-2 {
@@ -120,28 +125,32 @@ section {
   .nav--btn-4 {
     transition-delay: 50ms; }
   .nav--checkbox:checked ~ .nav--button {
-    background: #fff;
-    transition: 3s; }
+    background: #fff; }
     .nav--checkbox:checked ~ .nav--button .span_top {
       margin-bottom: 0;
-      transform: rotate(45deg); }
+      transform: rotate(-45deg); }
     .nav--checkbox:checked ~ .nav--button .span_mid {
-      transform: rotate(135deg); }
+      transform: rotate(-135deg); }
     .nav--checkbox:checked ~ .nav--button .span_bot {
       margin-top: 0;
-      transform: rotate(45deg); }
+      transform: rotate(-45deg); }
+  .nav--checkbox:checked ~ .nav--small {
+    height: 80px;
+    width: 80px; }
+    .nav--checkbox:checked ~ .nav--small a {
+      visibility: visible; }
   .nav--checkbox:checked ~ .nav--btn-1 {
-    bottom: 200px;
+    bottom: 234px;
     right: 20px; }
   .nav--checkbox:checked ~ .nav--btn-2 {
-    bottom: 120px;
-    right: 60px; }
+    bottom: 133px;
+    right: 48px; }
   .nav--checkbox:checked ~ .nav--btn-3 {
-    bottom: 54px;
-    right: 112px; }
+    bottom: 48px;
+    right: 109px; }
   .nav--checkbox:checked ~ .nav--btn-4 {
-    bottom: 4px;
-    right: 180px; } }
+    bottom: 0px;
+    right: 200px; } }
 
 .section_intro {
   padding-top: 35px;
@@ -219,6 +228,8 @@ section {
   background-size: 100%;
   position: relative;
   overflow: hidden; }
+  .section_advantages .icon {
+    width: 55px; }
   .section_advantages .adv_figure1 {
     position: absolute;
     left: 0; }
@@ -315,10 +326,24 @@ section {
   .section_vacancies .tab-pane {
     min-height: 350px; }
     .section_vacancies .tab-pane .image_bg {
-      background: linear-gradient(90deg, #02AAB0 0%, #00CDAC 100%);
-      border-radius: 5.77114px;
-      width: 147.16px;
-      height: 131.58px; }
+      position: relative;
+      max-height: 385px;
+      overflow: hidden; }
+      .section_vacancies .tab-pane .image_bg img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: relative;
+        z-index: 1; }
+      .section_vacancies .tab-pane .image_bg::after {
+        content: "";
+        background: linear-gradient(90deg, #02AAB0 0%, #00CDAC 100%);
+        border-radius: 10px;
+        width: 100%;
+        height: 75%;
+        position: absolute;
+        left: 0;
+        bottom: 0; }
     .section_vacancies .tab-pane .tab_title {
       color: #939393; }
     .section_vacancies .tab-pane .tab_description {
@@ -335,6 +360,9 @@ section {
       padding: 15px 0; }
     .section_vacancies .nav-tabs .section_subtitle {
       font-size: 15px; } }
+  @media (max-width: 360px) {
+    .section_vacancies .nav-tabs .section_subtitle {
+      font-size: 12px; } }
 
 .section_promo {
   background: linear-gradient(90deg, #02AAB0 0%, #00CDAC 98.29%);
@@ -472,5 +500,4 @@ section {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
-    height: 100%; }
+    width: 100%; }
