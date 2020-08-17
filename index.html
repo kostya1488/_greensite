@@ -29,7 +29,7 @@
                     <div class="logo d-none d-sm-block col-sm-2 col-xl-6">
                         <img src="assets/svg/logo.svg" alt="logo">
                     </div>
-                    <nav class="col-sm-5 col-xl-3">
+                    <nav class="col-sm-6 col-xl-4">
                         <ul id="menu" class="d-flex justify-content-between">
                             <input type="checkbox" class="nav--checkbox" id="nav-toggle">
                             <label for="nav-toggle" class="nav--button">                                
@@ -51,7 +51,7 @@
                             </li>
                         </ul>
                     </nav>
-                    <div class="phone_number col-sm-3 d-none d-sm-flex justify-content-sm-end">
+                    <div class="phone_number col-sm-3 col-xl-2 d-none d-sm-flex justify-content-sm-end">
                         <a href="tel:+380996661488"><img class="mr-sm-2" src="assets/svg/phone.svg" alt="phone">(099) 666-1488</a>
                     </div>
                 </div>
@@ -67,7 +67,7 @@
                         <div class="intro_title section_title d-none d-sm-block mb-sm-3">Phasellus facilisi elit et</div>
                         <div class="intro_description d-none d-sm-block mb-4">Non, amet lectus nisi aenean leo ut vitae aliquam lectus. Phasellus eu, ipsum porta imperdiet. </div>
                         <div class="intro_button">
-                            <a href="#" class="btn_main nav_link">Заполнить анкету</a>
+                            <a href="#anketa" class="btn_main nav_link">Заполнить анкету</a>
                         </div>
                     </div>
                 </div>
@@ -146,7 +146,7 @@
                         <div class="section_title about_title mb-4">Phasellus facilisi elit et</div>
                         <div class="about_description mb-4">Non, amet lectus nisi aenean leo ut vitae aliquam lectus. Phasellus eu, ipsum porta imperdiet. Nam eget cursus sagittis leo in sed elit sit. Semper risus, cras pretium malesuad</div>
                         <div class="text-right text-sm-left about_button">
-                            <a href="" class="btn_secondary">Заполнить анкету</a>
+                            <a href="#anketa" class="btn_secondary nav_link">Заполнить анкету</a>
                         </div>
                     </div>
                 </div>
@@ -238,7 +238,7 @@
         <div class="container-fluid">
             <div class="row justify-content-center px-4">
                 <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="row justify-content-end pr-sm-3 order-0">
+                    <div class="row justify-content-end order-0">
                         <div class="promo_item item1">
                             <div class="numb_box d-flex justify-content-center align-items-center">1</div>
                             <div class="promo_text">Non, amet lectus nisi aenean leo ut vitae aliquam lectusret</div>
@@ -252,7 +252,7 @@
                 <div class="col-6 col-lg-4 row justify-content-center order-3 order-lg-1">
                     <img src="assets/promo.png" alt="p" class="promo_front_photo">
                 </div>
-                <div class="col-12 col-sm-6 col-lg-4 pr-sm-0 order-2">
+                <div class="col-12 col-sm-6 col-lg-4 p-0 pl-sm-3 p-lg-0 order-2">
                     <div class="promo_item item3">
                         <div class="numb_box d-flex justify-content-center align-items-center">3</div>
                         <div class="promo_text">Non, amet lectus nisi aenean leo ut vitae aliquam lectusret</div>
@@ -276,7 +276,12 @@
             <div class="row justify-content-center">
                 <div class="col-11 col-sm-8 col-lg-6 col-xl-5">
                     <div class="form_box">
-                        <form action="">
+                        <div id="ajax_respounce" class="section_subtitle text-center">
+                            <div class=" mb-5">Спасибо!</div>
+                            <div class="mb-5">Анкета успешно отправлена</div>
+                            <div>Мы вам перезвоним в ближайшее время</div>
+                        </div>
+                        <form id="ajax_form" action="">
                             <div class="text_for_input">Имя</div>
                             <input type="text" class="input" name="name">
                             <div class="text_for_input">Номер</div>
@@ -286,7 +291,7 @@
                             <div class="text_for_input">Email</div>
                             <input type="text" class="input" name="email">
                             <div class="row justify-content-center mt-3">
-                                <button class="btn_secondary">Отправить</button>
+                                <button class="btn_secondary" onclick="submit_form('ajax_form')">Отправить</button>
                             </div>
                         </form>
                     </div>
@@ -297,25 +302,25 @@
     <!-- ========================================================== / section_anketa  -->
     <!-- ---------------------------------------------------------- section_footer  -->
     <footer id="footer" class="section_footer">
-        <div class="container">
+        <div class="container px-4">
             <div class="row justify-content-center justify-content-sm-between">
-                <div class="logo col-4 text-center text-sm-left col-sm-3">
+                <div class="logo col-4 col-sm-3">
                     <img src="assets/svg/logo_black.svg" alt="logo">
                 </div>
-                <nav class="col-11 col-sm-4 order-2 mt-5 mt-sm-0">
-                    <ul class="d-flex justify-content-around">
+                <nav class="col-11 col-sm-4 order-2 order-sm-1 mt-5 mt-sm-0 p-0">
+                    <ul class="d-flex justify-content-between">
                         <li class="menu_item">
-                            <a href="#" class="nav_link">Tellus</a>
+                            <a href="#contacts" class="nav_link">Контакты</a>
                         </li>
                         <li class="menu_item">
-                            <a href="#" class="nav_link">Lorem</a>
+                            <a href="#about" class="nav_link">О нас</a>
                         </li>
                         <li class="menu_item">
-                            <a href="#" class="nav_link">Lorem</a>
+                            <a href="#vacancies" class="nav_link">Вакансии</a>
                         </li>
                     </ul>
                 </nav>
-                <div class="phone_number text-center col-8 d-sm-flex justify-content-sm-end">
+                <div class="phone_number text-right order-sm-2 col-8 col-sm-3  d-sm-flex justify-content-sm-end">
                     <a href="tel:+380996661488"><img class="mr-2" src="assets/svg/phone_block.svg" alt="phone">(099) 666-1488</a>
                 </div>
             </div>

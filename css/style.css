@@ -68,10 +68,11 @@ section {
     bottom: 2px; }
   .header .nav--checkbox {
     display: none; }
+  .header .nav--button {
+    position: absolute; }
 
 @media (max-width: 575px) {
   .nav--button {
-    position: absolute;
     margin: 0 auto;
     right: 0;
     left: 0;
@@ -82,7 +83,7 @@ section {
     width: 70px;
     border-radius: 50%;
     background: linear-gradient(90deg, #02AAB0 0%, #00CDAC 100%);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
     z-index: 666;
     transition: all 500ms cubic-bezier(0.6, -0.5, 0.4, 1.5); }
     .nav--button span {
@@ -264,6 +265,12 @@ section {
     right: 0;
     top: 418px;
     z-index: 1; }
+    @media (min-width: 1200px) {
+      .two_section .figure3 {
+        top: 605px; } }
+    @media (min-width: 992px) and (max-width: 1199px) {
+      .two_section .figure3 {
+        top: 550px; } }
 
 .section_about {
   padding-top: 60px;
@@ -430,7 +437,7 @@ section {
   @media (max-width: 1199px) {
     .section_promo {
       padding-bottom: 44px; } }
-  @media (max-width: 991px) {
+  @media (min-width: 576px) and (max-width: 991px) {
     .section_promo {
       padding-bottom: 33px; }
       .section_promo .promo_item {
@@ -438,6 +445,8 @@ section {
       .section_promo .item3 {
         margin-top: 70px; } }
   @media (max-width: 575px) {
+    .section_promo .promo_item {
+      margin-top: 35px; }
     .section_promo .promo_figure2 {
       width: 197%;
       left: -57px; } }
@@ -446,6 +455,8 @@ section {
   background: url(../assets/anketa.jpg) no-repeat 50% 100%;
   background-size: cover;
   position: relative; }
+  .section_anketa #ajax_respounce {
+    display: none; }
   .section_anketa::after {
     content: "";
     position: absolute;
