@@ -322,8 +322,8 @@ section {
 // ========================================================== / section_contacts  
 // ---------------------------------------------------------- section_advantages  
 .section_advantages {
-    background: url(..//assets/advantages.jpg) no-repeat 0 0;
-    background-size: 100%;
+    // background: url(..//assets/advantages.jpg) no-repeat 0 0;
+    // background-size: 100%;
     // min-height: 600px;
     position: relative;
     overflow: hidden;
@@ -372,7 +372,7 @@ section {
         top: 418px;
         z-index: 1;
         @media (min-width: $screen_xl) {
-            top: 605px
+            top: 695px
         }
         @media (min-width: $screen_lg) and (max-width: $screen_lg_max) {
             top: 550px
@@ -406,6 +406,12 @@ section {
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+    }
+    @media (min-width: $screen_xl) {
+        .about_bot_bg,
+        .about_bot {
+            height: 245px;
         }
     }
     @media (max-width: $screen_xs_max) {
@@ -579,6 +585,9 @@ section {
     }
     @media (min-width: $screen_xl) {
         padding-bottom: 69px;
+        .promo_figure2 {
+            height: 358px;
+        }
     }
     @media (min-width: $screen_lg) {
         .item1 {
@@ -602,6 +611,7 @@ section {
         }
     }
     @media (max-width: $screen_xs_max) {
+        padding-bottom: 31px;
         .promo_item {
             margin-top: 35px;
         }
@@ -666,8 +676,11 @@ section {
         outline: none;
         color: #FFF;
     }
-    @media (min-width: $screen_xl) {
-        min-height: 100vh;
+    @media (min-width: $screen_sm) {
+        min-height: 840px;
+    }
+    @media (max-width: $screen_xs_max) {
+        min-height: 725px;
     }
 }
 
@@ -695,6 +708,11 @@ section {
         bottom: 0;
         left: 0;
         width: 100%;
+    }
+    @media (min-width: $screen_lg) {
+        .footer_figure {
+            height: 90%;
+        }
     }
 }
 

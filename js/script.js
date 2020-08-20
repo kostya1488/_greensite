@@ -10,25 +10,30 @@ $(".nav_link").on("click", function(event) {
 //------------------------------------------------- ajax
 
 function submit_form(id) {
+
     var form = $('#' + id);
     var res = $('#ajax_respounce');
-    form.parent().animate({
-            opacity: 0,
-            left: "20%"
-        },
-        800, () => {
-            setTimeout(() => {
-                form.hide();
-                res.show();
-                form.parent().animate({
-                        paddingTop: 100,
-                        paddingBottom: 100,
-                        opacity: 1,
-                        left: 0
-                    },
-                    800);
-            }, 400)
 
-        }
-    )
+    form.submit(function() {
+        form.parent().animate({
+                opacity: 0,
+                left: "60%"
+            },
+            800, () => {
+                setTimeout(() => {
+                    form.hide();
+                    form.parent().css('padding', '100px 0')
+                    res.show();
+                    form.parent().animate({
+                            opacity: 1,
+                            left: 0
+                        },
+                        800);
+                }, 600)
+
+            }
+        );
+        return false;
+    });
+
 }
